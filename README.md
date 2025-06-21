@@ -60,7 +60,7 @@ Este é um sistema web de **gestão de tarefas** desenvolvido com Django. Ele pe
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/gestao-tarefas.git
+git clone https://github.com/MiudoKubanza/gestao_de_tarefa.git
 cd gestao-tarefas
 ````
 
