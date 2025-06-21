@@ -39,11 +39,10 @@ Este é um sistema web de **gestão de tarefas** desenvolvido com Django. Ele pe
 - `nome`: nome da categoria (ex: Trabalho, Estudos, Pessoal)
 
 #### 👤 Perfil
-- `usuario`: ligação OneToOne com o modelo `User`
-- `foto`: imagem de perfil (opcional)
-- `bio`: descrição pessoal (opcional)
+- `nome_completo`: nome do usuario
+- `bi`: descrição pessoal (opcional)
 - `telefone`: número de telefone (opcional)
-- `data_criacao`: data em que o perfil foi criado
+- `usuario`: ligação OneToOne com o modelo `User`
 
 ---
 
