@@ -1,11 +1,137 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pagina Inicial</title>
+    <title>Gestor | De Tarefas</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
 </head>
-<body>
-    <h1>Bem-vindo ao Sistema de Gestão de Tarefas</h1>
+
+<body class="hold-transition layout-top-nav">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+            <div class="container">
+                <a href="{% url 'home' %}" class="navbar-brand">
+                    <span class="brand-text font-weight-light">Gestor de Tarefas</span>
+                </a>
+
+                <button class="navbar-toggler order-1" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse order-3 justify-content-end" id="navbarCollapse">
+                    <!-- Menu alinhado à direita -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="{% url 'home' %}" class="nav-link">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contato</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" class="nav-link dropdown-toggle">Mais</a>
+                            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                                <li><a href="#" class="dropdown-item">Alguma ação</a></li>
+                                <li><a href="#" class="dropdown-item">Outra ação</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-submenu dropdown-hover">
+                                    <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"
+                                        class="dropdown-item dropdown-toggle">Ações avançadas</a>
+                                    <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                                        <li>
+                                            <a tabindex="-1" href="#" class="dropdown-item">Nível 2</a>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"
+                                                class="dropdown-item dropdown-toggle">Nível 2</a>
+                                            <ul aria-labelledby="dropdownSubMenu3"
+                                                class="dropdown-menu border-0 shadow">
+                                                <li><a href="#" class="dropdown-item">3º nível</a></li>
+                                                <li><a href="#" class="dropdown-item">3º nível</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="dropdown-item">Nível 2</a></li>
+                                        <li><a href="#" class="dropdown-item">Nível 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Fim do menu alinhado à direita -->
+            </div>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0"> Navegação Superior <small>Exemplo 3.0</small></h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Início</a></li>
+                                <li class="breadcrumb-item"><a href="#">Layout</a></li>
+                                <li class="breadcrumb-item active">Navegação Superior</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Qualquer coisa que você quiser
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2025.</strong>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{% static 'dist/js/demo.js' %}"></script>
 </body>
+
 </html>
