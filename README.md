@@ -107,6 +107,7 @@ http://localhost:8000
 
 ## 📷 Capturas de tela (opcional)
 
+![image](https://github.com/user-attachments/assets/384088f7-53bb-4d77-b8a8-9acff2120dd8)
 
 
 ---
