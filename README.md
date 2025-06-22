@@ -68,9 +68,9 @@ cd gestao_de_tarefa
 
 ```bash
 python -m venv venv
-venv\Scripts\activate   # No Windows
+django\Scripts\Activate   # No Windows
 # ou
-source venv/bin/activate  # No Linux/macOS
+source djangov/bin/activate  # No Linux/macOS
 ```
 
 3. Instale as dependências:
