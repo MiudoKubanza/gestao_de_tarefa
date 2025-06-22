@@ -124,6 +124,17 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+# Redirecionamento após login/logout
+LOGIN_URL = 'usuarios:login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'usuarios:login'
+LOGOUT_VIEW = {
+    'next_page': 'usuarios:login',
+    'redirect_authenticated_user': False,
+    'extra_context': None,
+    'http_method_names': ['get', 'post'],  # Adicione 'get' aqui
+}
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

@@ -1,0 +1,28 @@
+{% extends 'portais/home.html' %}
+{% load static %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card card-primary shadow">
+                <div class="card-header text-center">
+                    <h3 class="card-title w-100">
+                        <i class="fas fa-user-plus"></i>
+                        {{ titulo|default:"Formulário" }}
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST" autocomplete="off">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary btn-block mt-3">
+                            <i class="fas fa-save"></i> {{ botao|default:"Salvar" }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

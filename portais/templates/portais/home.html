@@ -36,6 +36,23 @@
                         <li class="nav-item">
                             <a href="{% url 'home' %}" class="nav-link">Início</a>
                         </li>
+                        {% if request.resolver_match.url_name == 'registrar' %}
+                        <li class="nav-item">
+                            <a href="{% url 'usuarios:login' %}" class="nav-link text-success">Entrar</a>
+                        </li>
+                        {% elif request.resolver_match.url_name == 'login' %}
+                        <li class="nav-item">
+                            <a href="{% url 'usuarios:registrar' %}" class="nav-link text-primary">Registrar</a>
+                        </li>
+                        {% elif request.resolver_match.url_name == 'home' and not request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'usuarios:login' %}" class="nav-link text-success">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'usuarios:registrar' %}" class="nav-link text-primary">Registrar</a>
+                        </li>
+                        {% else %}
+                        {% if request.user.is_authenticated %}
                         <li class="nav-item">
                             <a href="#" class="nav-link">Minhas Tarefas</a>
                         </li>
@@ -49,8 +66,16 @@
                             <a href="#" class="nav-link">Meu Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-danger">Sair</a>
+                            <form action="{% url 'usuarios:logout' %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="nav-link btn btn-link text-danger"
+                                    style="padding:0; border:none; background:none;">
+                                    Sair
+                                </button>
+                            </form>
                         </li>
+                        {% endif %}
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- Fim do menu alinhado à direita -->
@@ -63,28 +88,12 @@
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container">
-                    <div class="row mb-3">
-                        <div class="col text-center">
-                            <h1 class="m-0">Bem-vindo ao Gestor de Tarefas</h1>
-                            <p class="lead">Organize suas atividades, defina prioridades e aumente sua produtividade.</p>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-3 mb-3">
-                            <a href="#" class="btn btn-success btn-block">➕ Nova Tarefa</a>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <a href="#" class="btn btn-primary btn-block">📋 Ver Tarefas</a>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <a href="#" class="btn btn-info btn-block">📁 Gerir Categorias</a>
-                        </div>
-                    </div>
+                    {% block conteudo %}
+                    <!-- O conteúdo das páginas filhas será inserido aqui -->
+                    {% endblock %}
                 </div>
             </div>
             <!-- /.content-header -->
-
-            <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
